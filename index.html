@@ -26,15 +26,6 @@ header {
     text-align: center;
 }
 
-header h1 {
-    font-size: 36px;
-}
-
-header p {
-    margin-top: 8px;
-    font-size: 18px;
-}
-
 .container {
     max-width: 1100px;
     margin: auto;
@@ -59,20 +50,20 @@ h2 {
     margin-bottom: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    cursor: pointer;
 }
 
-ul {
-    padding-left: 20px;
+.card:hover {
+    transform: scale(1.02);
 }
 
-.skills span {
-    display: inline-block;
-    background: #0077b6;
-    color: white;
-    padding: 8px 12px;
-    margin: 5px;
-    border-radius: 20px;
-    font-size: 14px;
+iframe {
+    width: 100%;
+    height: 700px;
+    border: none;
+    margin-top: 20px;
+    display: none;
 }
 
 footer {
@@ -80,19 +71,6 @@ footer {
     color: white;
     text-align: center;
     padding: 20px;
-}
-a {
-    color: #0077b6;
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
-}
-
-@media(max-width:768px){
-    header h1 {
-        font-size: 28px;
-    }
 }
 </style>
 </head>
@@ -109,7 +87,7 @@ a:hover {
 
 <section>
 <h2>Professional Summary</h2>
-<div class="card">
+<div class="card" style="cursor:default;">
 <p>
 Data Analyst with strong expertise in automation, SQL query optimization, and business intelligence.
 Proven track record of driving operational efficiency by automating workflows using Python,
@@ -119,90 +97,30 @@ optimizing SQL queries by 70%, and delivering impactful Power BI dashboards for 
 </section>
 
 <section>
-<h2>Technical Skills</h2>
-<div class="card skills">
-<span>Python (Pandas, OpenPyXL, Selenium)</span>
-<span>Advanced Oracle SQL</span>
-<span>Power BI</span>
-<span>Excel (Advanced)</span>
-<span>Query Optimization</span>
-<span>JIRA</span>
-<span>UAT</span>
-<span>Application Support</span>
-</div>
-</section>
+<h2>Projects</h2>
 
-<section>
-<h2>Professional Experience</h2>
-
-<div class="card">
-<h3>Assistant Manager – IT & Data Analytics</h3>
-<p><strong>Share India Fincap Pvt. Ltd.</strong> | April 2025 – Present</p>
-<ul>
-<li>Developed high-impact Power BI dashboards.</li>
-<li>Automated Excel reporting using Python scripts.</li>
-<li>Reduced SQL execution time from 45 to 10–15 minutes.</li>
-<li>Led UAT and end-user training.</li>
-</ul>
+<div class="card" onclick="showDashboard()">
+<strong>Portfolio Overview (Power BI Dashboard)</strong>
+<p>Click to view interactive Power BI dashboard.</p>
 </div>
 
-<div class="card">
-<h3>Senior Executive – IT & MIS</h3>
-<p><strong>Share India Fincap Pvt. Ltd.</strong> | Dec 2024 – Mar 2025</p>
-<ul>
-<li>Built interactive dashboards for management insights.</li>
-<li>Managed JIRA ticketing and application upgrades.</li>
-</ul>
+<div class="card" style="cursor:default;">
+<strong>SQL Optimization Project</strong>
+<p>Reduced SQL runtime by 70%.</p>
 </div>
 
-<div class="card">
-<h3>IT Executive</h3>
-<p><strong>Midland Microfin Ltd.</strong> | Oct 2023 – Dec 2024</p>
-<ul>
-<li>Managed enterprise applications and network support.</li>
-<li>Conducted user training and UAT.</li>
-</ul>
+<div class="card" style="cursor:default;">
+<strong>Excel Automation Tool</strong>
+<p>Reduced reporting time by 60% using Python.</p>
 </div>
 
-</section>
+<iframe 
+    id="dashboard"
+    title="Portfolio Dashboard 2.O"
+    src="https://app.powerbi.com/reportEmbed?reportId=899328bc-55b9-4013-8e14-0210b865386c&autoAuth=true&ctid=820da9b9-d055-4aea-8a5b-f19850401f8d"
+    allowFullScreen="true">
+</iframe>
 
-<section>
-<h2>Key Projects</h2>
-<div class="card">
-<ul>
-<li><strong>Power BI Dashboards:</strong> Portfolio, Collection & Overdue Analytics</li>
-<li><strong>SQL Optimization:</strong> Reduced runtime by 70%</li>
-<li><strong>Excel Automation:</strong> Reduced reporting time by 60%</li>
-<li><strong>Loan Statement Automation Tool:</strong> Selenium-based automation</li>
-<li><strong>Google Drive Link Extractor:</strong> Automated PDF mapping system</li>
-</ul>
-</div>
-</section>
-
-<section>
-<h2>Education</h2>
-<div class="card">
-<p><strong>MCA (AI & ML) – Pursuing</strong> | Amity University</p>
-<p><strong>BCA</strong> | Anugraha Memorial College, Gaya</p>
-<p><strong>Advanced Diploma in Computer Applications</strong></p>
-</div>
-</section>
-
-<section>
-<h2>Certifications</h2>
-<div class="card">
-<ul>
-<li>KAT – MIS, CSR & IT (April 2024)</li>
-<li>Advanced Excel Certification</li>
-</ul>
-</div>
-</section>
-
-<section>
-<h2>Languages</h2>
-<div class="card">
-English | Hindi
-</div>
 </section>
 
 </div>
@@ -210,6 +128,13 @@ English | Hindi
 <footer>
 © 2026 Ankit Kumar | Data Analyst Portfolio
 </footer>
+
+<script>
+function showDashboard() {
+    document.getElementById("dashboard").style.display = "block";
+    document.getElementById("dashboard").scrollIntoView({ behavior: "smooth" });
+}
+</script>
 
 </body>
 </html>
